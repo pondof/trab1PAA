@@ -1,0 +1,65 @@
+Coloração Seletiva de Grafos (SGCP)
+Data: 2026-10-16 17:44:05
+
+Instância: nsf_p0.2_s5 (instancias/nsfnet/nsf_p0.2_s5.txt)
+n = 66 vértices, m = 242 arestas, k = 44 grupos, densidade = 0.1128
+
+Método           Cores  Tempo (ms)  Validação
+guloso_classes       5       0.112  válida
+duas_fases           5       0.115  válida
+
+Melhor solução: guloso_classes
+Valor (número de cores = trabalhadores): 5
+
+ Grupo  Representante   Cor
+     1              1     1
+     2              2     2
+     3              4     1
+     4              5     2
+     5              7     5
+     6              9     1
+     7             10     1
+     8             12     1
+     9             13     2
+    10             15     1
+    11             17     2
+    12             18     1
+    13             19     1
+    14             20     2
+    15             21     3
+    16             23     3
+    17             24     1
+    18             25     1
+    19             27     2
+    20             28     1
+    21             30     4
+    22             31     1
+    23             32     1
+    24             33     3
+    25             34     3
+    26             35     4
+    27             37     4
+    28             38     2
+    29             40     2
+    30             41     3
+    31             44     5
+    32             45     1
+    33             48     5
+    34             49     2
+    35             50     3
+    36             53     2
+    37             55     4
+    38             56     1
+    39             58     1
+    40             59     2
+    41             61     2
+    42             62     1
+    43             64     3
+    44             66     1
+
+Tarefas (vértices) de cada trabalhador (cor):
+  Trabalhador 1 (18 tarefas): 1, 4, 9, 10, 12, 15, 18, 19, 24, 25, 28, 31, 32, 45, 56, 58, 62, 66
+  Trabalhador 2 (12 tarefas): 2, 5, 13, 17, 20, 27, 38, 40, 49, 53, 59, 61
+  Trabalhador 3 (7 tarefas): 21, 23, 33, 34, 41, 50, 64
+  Trabalhador 4 (4 tarefas): 30, 35, 37, 55
+  Trabalhador 5 (3 tarefas): 7, 44, 48
