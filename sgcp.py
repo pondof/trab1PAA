@@ -1,4 +1,4 @@
-"""Coloração Seletiva de Grafos (SGCP): leitura de instâncias e validação de soluções."""
+"""Coloração Seletiva de Grafos (SGCP): leitura de instâncias, heurísticas e validação."""
 
 from pathlib import Path
 
@@ -32,6 +32,53 @@ def ler_instancia(caminho):
             # demais linhas (comentários com '#') são ignoradas
     return {'nome': Path(caminho).stem, 'n': n, 'm': m, 'k': k,
             'grupos': grupos, 'grupo_de': grupo_de, 'adj': adj}
+
+
+def guloso_classes(inst):
+    """Guloso por classes de cor: contrata um trabalhador (cor) por vez e dá a ele o
+    máximo de tarefas compatíveis, no máximo uma por grupo, começando pelas de menor grau.
+
+    Baseado na heurística gulosa de A. Santini (greedy_heuristic.cpp), que acompanha
+    Furini, Malaguti & Santini (2018). Devolve (representantes, cores), com k+1 posições.
+    """
+    k, adj, grupo_de = inst['k'], inst['adj'], inst['grupo_de']
+    ordem = sorted(range(1, inst['n'] + 1), key=lambda v: (len(adj[v]), v))
+    representantes = [0] * (k + 1)
+    cores = [0] * (k + 1)
+    pendentes = set(range(1, k + 1))
+    cor = 0
+    while pendentes:
+        cor += 1               # novo trabalhador
+        bloqueados = set()     # vizinhos das tarefas que já estão nesta cor
+        for v in ordem:
+            g = grupo_de[v]
+            if g in pendentes and v not in bloqueados:
+                representantes[g] = v
+                cores[g] = cor
+                pendentes.remove(g)
+                bloqueados |= adj[v]
+    return representantes, cores
+
+
+def duas_fases(inst):
+    """Baseline: (1) em cada grupo, escolhe o vértice de menor grau (desempate: menor id);
+    (2) colore os escolhidos com first-fit, na ordem dos grupos.
+
+    Devolve (representantes, cores), com k+1 posições.
+    """
+    k, adj = inst['k'], inst['adj']
+    representantes = [0] * (k + 1)
+    cores = [0] * (k + 1)
+    for g in range(1, k + 1):
+        representantes[g] = min(inst['grupos'][g], key=lambda v: (len(adj[v]), v))
+    for g in range(1, k + 1):
+        v = representantes[g]
+        usadas = {cores[h] for h in range(1, g) if representantes[h] in adj[v]}
+        cor = 1
+        while cor in usadas:
+            cor += 1
+        cores[g] = cor
+    return representantes, cores
 
 
 def validar(inst, representantes, cores):
