@@ -48,16 +48,21 @@ def executar(inst):
     return resultados
 
 
+def densidade(inst):
+    """Densidade do grafo: 2m / (n(n-1))."""
+    n, m = inst['n'], inst['m']
+    return 2 * m / (n * (n - 1)) if n > 1 else 0
+
+
 def relatorio(caminho, inst, resultados):
     """Monta o texto do relatório."""
     n, m, k = inst['n'], inst['m'], inst['k']
-    densidade = 2 * m / (n * (n - 1)) if n > 1 else 0
     linhas = [
         'Coloração Seletiva de Grafos (SGCP)',
         f'Data: {datetime.now():%Y-%m-%d %H:%M:%S}',
         '',
         f'Instância: {inst["nome"]} ({caminho})',
-        f'n = {n} vértices, m = {m} arestas, k = {k} grupos, densidade = {densidade:.4f}',
+        f'n = {n} vértices, m = {m} arestas, k = {k} grupos, densidade = {densidade(inst):.4f}',
         '',
         f'{"Método":<16}{"Cores":>6}{"Tempo (ms)":>12}  Validação',
     ]

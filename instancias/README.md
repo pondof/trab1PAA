@@ -31,6 +31,22 @@ c <id_grupo> <v1> <v2> ...     # um grupo por linha ("c" é grupo, não comentá
 e <u> <v>                      # uma aresta por linha
 ```
 
+## Valores de referência
+
+`referencias.csv` traz, para 187 arquivos, o valor ótimo ou o melhor conhecido
+(colunas `instancia`, `valor`, `otimo`, `fonte`), tirado das Tabelas 2 e 3 de
+Furini, Malaguti & Santini (2018), que também reproduzem os limites de Hoshino,
+Frota & de Souza (2011). Em 180 arquivos o valor é ótimo (`otimo = sim`); em 7
+(`n90p2t2s4`, `n90p3t2s4` e as cinco cópias de `ring_n20p1.0s1`) é o melhor
+limite superior conhecido. Os demais arquivos não aparecem nas tabelas do artigo.
+O `experimentos.py` usa esse arquivo para calcular o gap.
+
+Para conferir que as instâncias são as mesmas do artigo: o `n` coincide em
+todas, e o `|E|` do artigo, que conta as arestas depois de transformar cada
+grupo em uma clique, coincide em 174 das 175 instâncias. A exceção é
+`n90p2t2s2` (837 aqui, 821 no artigo, o mesmo valor de `n90p2t2s4`),
+provavelmente um erro de digitação.
+
 ## Observações
 
 - Os grupos têm 2 vértices em `random/` e `ring/`, e 1 ou 2 vértices em `nsfnet/`.
