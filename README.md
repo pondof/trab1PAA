@@ -59,6 +59,7 @@ liga dois representantes com a mesma cor.
 | `testes.py` | testes (`unittest`) com a instância toy |
 | `instancias/` | casos de teste: `exemplo/` (toy), `random/` (80), `nsfnet/` (50), `ring/` (150) |
 | `resultados/` | relatórios e tabelas gerados |
+| `relatorio/` | artigo no modelo da SBC (`relatorio.tex`, `referencias.bib`, `sbc-template.sty`, `sbc.bst`); compile com pdfLaTeX e BibTeX, por exemplo no Overleaf |
 
 ## Instâncias
 
