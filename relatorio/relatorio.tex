@@ -37,7 +37,6 @@
 
 \author{Carlos Alberto de Lima Neto, Guilherme Augusto Pondofe Santana}
 
-% TODO: confirmar o departamento e preencher os e-mails.
 \address{Departamento de Informática e Matemática Aplicada (DIMAp)\\
   Universidade Federal do Rio Grande do Norte (UFRN) -- Natal -- RN -- Brasil
 }
@@ -71,7 +70,7 @@ solução. O problema foi proposto por \cite{li2000}, com o nome de
 \emph{Partition Coloring Problem} (PCP), para modelar o roteamento e a
 atribuição de comprimentos de onda em redes ópticas: cada grupo reúne as rotas
 possíveis de uma conexão, duas rotas que compartilham um enlace são adjacentes
-e cada cor é um comprimento de onda. Outras aplicações, como problemas de
+e cada cor é um comprimento de onda. Outras aplicações, como problemas de 
 escalonamento e de alocação, são discutidas por \cite{demange2015}.
 
 Uma forma de ver o problema é a seguinte. Há tarefas divididas em categorias, e
@@ -195,7 +194,9 @@ branch-and-cut baseado na formulação por representantes.
 \cite{hoshino2011} propuseram um branch-and-price sobre uma reformulação de
 Dantzig-Wolfe da mesma formulação. \cite{furini2018} propuseram um novo
 branch-and-price, com subproblema de conjunto independente de peso máximo, que
-resolveu pela primeira vez várias instâncias em aberto. Os valores ótimos
+resolveu pela primeira vez várias instâncias em aberto. \cite{seker2021}
+propuseram um algoritmo exato de planos de corte para o caso em que o grafo é
+perfeito, junto com um gerador de instâncias desse tipo. Os valores ótimos
 publicados nesse trabalho são a principal referência dos nossos experimentos.
 
 \paragraph{Algoritmos aproximativos.} Pelo resultado de inaproximabilidade da
@@ -243,7 +244,9 @@ As instâncias foram convertidas para um formato textual simples, com vértices 
 grupos numerados a partir de 1: uma linha \texttt{p edge $n$ $m$ $k$}, uma linha
 \texttt{c $i$ $v_1$ $v_2$ \dots} por grupo e uma linha \texttt{e $u$ $v$} por
 aresta. Como existem instâncias da literatura com tamanho significativo (até
-760 vértices e 117 mil arestas), não foi necessário criar um gerador.
+760 vértices e 117 mil arestas), não foi necessário criar um gerador, como o
+de grafos perfeitos de \cite{seker2021}. Usar as instâncias clássicas também
+permite comparar os resultados com os valores ótimos publicados.
 
 Links importantes:
 \begin{itemize}
@@ -493,7 +496,7 @@ maior diferença, em cores, entre o guloso e a referência dentro do grupo.
 \end{table}
 
 Para comparar com heurísticas construtivas publicadas, a
-Tabela~\ref{tab:onestep} reúne as médias por conjunto random reportadas por
+Tabela~\ref{tab:onestep} reúne as médias por conjunto random reportadas na Tabela~6.1 de
 \cite{fritz2013} para Onestep-CD \cite{li2000} e para a construção híbrida
 daquele trabalho, ao lado das médias dos nossos dois métodos nas mesmas
 instâncias. Os valores de \cite{fritz2013} vêm de outra implementação, em outra

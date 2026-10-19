@@ -1,5 +1,6 @@
 """Testes com a instância toy (8 vértices, 4 grupos, ótimo = 2). Rode: python3 -m unittest testes"""
 
+import itertools
 import unittest
 from pathlib import Path
 
@@ -38,6 +39,15 @@ class TestesToy(unittest.TestCase):
     def test_validador_recusa_representante_fora_do_grupo(self):
         # o vértice 3 é do grupo 2, não do grupo 1
         self.assertNotEqual(validar(self.inst, [0, 3, 4, 6, 8], [0, 1, 2, 1, 2]), [])
+
+    def test_otimo_da_toy_e_2_por_forca_bruta(self):
+        # todas as 16 seleções e todas as colorações com até k cores
+        k = self.inst['k']
+        melhor = min(len(set(cores))
+                     for selecao in itertools.product(*self.inst['grupos'][1:])
+                     for cores in itertools.product(range(1, k + 1), repeat=k)
+                     if not validar(self.inst, [0, *selecao], [0, *cores]))
+        self.assertEqual(melhor, 2)
 
 
 if __name__ == '__main__':
