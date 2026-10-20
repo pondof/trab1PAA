@@ -12,7 +12,7 @@ arestas ligam tarefas no mesmo horário e as cores são trabalhadores.
 
 ## Requisitos
 
-Python 3.9 ou mais recente (testado nas versões 3.9, 3.11 e 3.14). Só a
+Python 3.9 ou mais recente (testado nas versões 3.13 e 3.14). Só a
 biblioteca padrão é usada: não há nada para instalar. Os comandos abaixo são
 executados na pasta do projeto. No Windows, use `python` (ou `py`) no lugar de
 `python3`.
@@ -37,37 +37,6 @@ cada trabalhador) com o seu valor. O mesmo relatório é salvo em
 por conjunto e tabela completa). Se existir `instancias/referencias.csv`, com as
 colunas `instancia,valor,fonte` preenchidas a partir dos artigos, as tabelas ganham
 as colunas `literatura` e `gap`.
-
-## Exemplo
-
-Relatório de `python3 main.py instancias/exemplo/toy.txt`. O ótimo da toy é 2
-(verificado por força bruta), e o guloso encontra uma solução ótima. Os tempos
-variam a cada execução.
-
-```text
-Coloração Seletiva de Grafos (SGCP)
-Data: 2026-10-16 17:34:54
-
-Instância: toy (instancias/exemplo/toy.txt)
-n = 8 vértices, m = 12 arestas, k = 4 grupos, densidade = 0.4286
-
-Método           Cores  Tempo (ms)  Validação
-guloso_classes       2       0.010  válida
-duas_fases           2       0.007  válida
-
-Melhor solução: guloso_classes
-Valor (número de cores = trabalhadores): 2
-
- Grupo  Representante   Cor
-     1              2     1
-     2              3     1
-     3              6     1
-     4              8     2
-
-Tarefas (vértices) de cada trabalhador (cor):
-  Trabalhador 1 (3 tarefas): 2, 3, 6
-  Trabalhador 2 (1 tarefa): 8
-```
 
 ## Algoritmos
 
@@ -96,7 +65,7 @@ liga dois representantes com a mesma cor.
 | `testes.py` | testes (`unittest`) com a instância toy |
 | `instancias/` | casos de teste: `exemplo/` (toy), `random/` (80), `nsfnet/` (50), `ring/` (150) |
 | `resultados/` | relatórios e tabelas gerados |
-| `relatorio/` | artigo no modelo da SBC (`relatorio.tex`, `referencias.bib`, `sbc-template.sty`, `sbc.bst`); compile com pdfLaTeX e BibTeX, por exemplo no Overleaf |
+| `relatorio.pdf` | artigo |
 
 ## Instâncias
 

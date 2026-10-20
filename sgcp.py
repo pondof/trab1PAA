@@ -20,7 +20,7 @@ def ler_instancia(caminho):
                 grupos = [[] for _ in range(k + 1)]
                 grupo_de = [0] * (n + 1)
                 adj = [set() for _ in range(n + 1)]
-            elif partes[0] == 'c':  # c <id_grupo> <v1> <v2> ...  (grupo, não comentário)
+            elif partes[0] == 'c':  # c <id_grupo> <v1> <v2> ...  grupo, não comentário
                 g = int(partes[1])
                 grupos[g] = [int(v) for v in partes[2:]]
                 for v in grupos[g]:

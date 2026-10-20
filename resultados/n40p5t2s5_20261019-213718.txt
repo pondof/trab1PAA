@@ -1,0 +1,42 @@
+Coloração Seletiva de Grafos (SGCP)
+Data: 2026-10-19 21:37:18
+
+Instância: n40p5t2s5 (instancias/random/n40p5t2s5.txt)
+n = 40 vértices, m = 420 arestas, k = 20 grupos, densidade = 0.5385
+
+Método           Cores  Tempo (ms)  Validação
+guloso_classes       7       0.100  válida
+duas_fases           6       0.080  válida
+
+Melhor solução: duas_fases
+Valor (número de cores = trabalhadores): 6
+
+ Grupo  Representante   Cor
+     1              9     1
+     2             36     1
+     3             24     2
+     4             19     2
+     5             18     2
+     6             39     2
+     7             25     1
+     8             14     3
+     9              8     1
+    10             32     4
+    11             29     3
+    12              6     5
+    13             26     1
+    14              5     3
+    15             34     5
+    16             16     4
+    17             15     3
+    18             13     5
+    19              3     6
+    20             12     3
+
+Tarefas (vértices) de cada trabalhador (cor):
+  Trabalhador 1 (5 tarefas): 9, 36, 25, 8, 26
+  Trabalhador 2 (4 tarefas): 24, 19, 18, 39
+  Trabalhador 3 (5 tarefas): 14, 29, 5, 15, 12
+  Trabalhador 4 (2 tarefas): 32, 16
+  Trabalhador 5 (3 tarefas): 6, 34, 13
+  Trabalhador 6 (1 tarefa): 3

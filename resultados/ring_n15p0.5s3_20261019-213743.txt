@@ -1,0 +1,141 @@
+Coloração Seletiva de Grafos (SGCP)
+Data: 2026-10-19 21:37:43
+
+Instância: ring_n15p0.5s3 (instancias/ring/ring_n15p0.5s3.txt)
+n = 208 vértices, m = 8724 arestas, k = 104 grupos, densidade = 0.4052
+
+Método           Cores  Tempo (ms)  Validação
+guloso_classes      21       0.586  válida
+duas_fases          23       0.792  válida
+
+Melhor solução: guloso_classes
+Valor (número de cores = trabalhadores): 21
+
+ Grupo  Representante   Cor
+     1              1     1
+     2              3     6
+     3              5     7
+     4              7     9
+     5              9    14
+     6             12     3
+     7             14     1
+     8             15     2
+     9             17     4
+    10             19     8
+    11             21    12
+    12             24     9
+    13             26     2
+    14             28     3
+    15             29     3
+    16             31     5
+    17             33    10
+    18             35    13
+    19             38     6
+    20             40     4
+    21             42     1
+    22             43     1
+    23             45     2
+    24             47     6
+    25             49    16
+    26             52    11
+    27             54     8
+    28             56     7
+    29             58     5
+    30             60     2
+    31             61     4
+    32             64    12
+    33             66    10
+    34             68    13
+    35             70     9
+    36             72     3
+    37             73     3
+    38             76    19
+    39             78     1
+    40             79     2
+    41             81     5
+    42             83     7
+    43             85    15
+    44             87    18
+    45             90    20
+    46             92    18
+    47             94    14
+    48             96     6
+    49             98     2
+    50             99     1
+    51            101    11
+    52            103    14
+    53            105    21
+    54            108    15
+    55            110     4
+    56            111     1
+    57            113     2
+    58            115     3
+    59            117     6
+    60            119     8
+    61            121    10
+    62            123    17
+    63            126    21
+    64            128    17
+    65            130    12
+    66            132     9
+    67            134     2
+    68            135     1
+    69            137     4
+    70            139     5
+    71            141     9
+    72            143    19
+    73            146    11
+    74            148     5
+    75            149     1
+    76            151     2
+    77            153     7
+    78            155    12
+    79            157    16
+    80            159    20
+    81            162    16
+    82            164    13
+    83            166     6
+    84            168     1
+    85            169     1
+    86            171     3
+    87            173    13
+    88            175    15
+    89            178     8
+    90            180     3
+    91            182     1
+    92            183     1
+    93            185     2
+    94            187     5
+    95            190     7
+    96            192     4
+    97            194     2
+    98            196     1
+    99            197     1
+   100            199     1
+   101            201     3
+   102            203    11
+   103            206    14
+   104            208    10
+
+Tarefas (vértices) de cada trabalhador (cor):
+  Trabalhador 1 (16 tarefas): 1, 14, 42, 43, 78, 99, 111, 135, 149, 168, 169, 182, 183, 196, 197, 199
+  Trabalhador 2 (11 tarefas): 15, 26, 45, 60, 79, 98, 113, 134, 151, 185, 194
+  Trabalhador 3 (9 tarefas): 12, 28, 29, 72, 73, 115, 171, 180, 201
+  Trabalhador 4 (6 tarefas): 17, 40, 61, 110, 137, 192
+  Trabalhador 5 (6 tarefas): 31, 58, 81, 139, 148, 187
+  Trabalhador 6 (6 tarefas): 3, 38, 47, 96, 117, 166
+  Trabalhador 7 (5 tarefas): 5, 56, 83, 153, 190
+  Trabalhador 8 (4 tarefas): 19, 54, 119, 178
+  Trabalhador 9 (5 tarefas): 7, 24, 70, 132, 141
+  Trabalhador 10 (4 tarefas): 33, 66, 121, 208
+  Trabalhador 11 (4 tarefas): 52, 101, 146, 203
+  Trabalhador 12 (4 tarefas): 21, 64, 130, 155
+  Trabalhador 13 (4 tarefas): 35, 68, 164, 173
+  Trabalhador 14 (4 tarefas): 9, 94, 103, 206
+  Trabalhador 15 (3 tarefas): 85, 108, 175
+  Trabalhador 16 (3 tarefas): 49, 157, 162
+  Trabalhador 17 (2 tarefas): 123, 128
+  Trabalhador 18 (2 tarefas): 87, 92
+  Trabalhador 19 (2 tarefas): 76, 143
+  Trabalhador 20 (2 tarefas): 90, 159
+  Trabalhador 21 (2 tarefas): 105, 126

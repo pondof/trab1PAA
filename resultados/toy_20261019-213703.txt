@@ -1,12 +1,12 @@
 Coloração Seletiva de Grafos (SGCP)
-Data: 2026-10-16 17:34:54
+Data: 2026-10-19 21:37:03
 
 Instância: toy (instancias/exemplo/toy.txt)
 n = 8 vértices, m = 12 arestas, k = 4 grupos, densidade = 0.4286
 
 Método           Cores  Tempo (ms)  Validação
-guloso_classes       2       0.010  válida
-duas_fases           2       0.007  válida
+guloso_classes       2       0.073  válida
+duas_fases           2       0.043  válida
 
 Melhor solução: guloso_classes
 Valor (número de cores = trabalhadores): 2

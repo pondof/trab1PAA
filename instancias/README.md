@@ -62,7 +62,7 @@ provavelmente um erro de digitação.
 ## Licença e citação
 
 O repositório de origem é distribuído sob a **GNU GPL v3.0**. As instâncias são
-redistribuídas aqui, convertidas, com atribuição. Ao usá-las, cite:
+redistribuídas aqui, convertidas, com atribuição:
 
 - F. Furini, E. Malaguti, A. Santini. *An exact algorithm for the Partition
   Coloring Problem*. Computers & Operations Research 92:170–181, 2018.

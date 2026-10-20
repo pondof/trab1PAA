@@ -1,9 +1,4 @@
-"""Interface: escolhe uma instância, roda os dois métodos, mostra e salva o relatório.
-
-Uso (na pasta do projeto):
-    python3 main.py                              # menu
-    python3 main.py instancias/exemplo/toy.txt   # instância direta
-"""
+"""Interface: escolhe uma instância, roda os dois métodos, mostra e salva o relatório."""
 
 import sys
 import time
